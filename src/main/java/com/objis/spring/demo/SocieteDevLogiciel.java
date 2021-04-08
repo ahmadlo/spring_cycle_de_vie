@@ -1,5 +1,8 @@
 package com.objis.spring.demo;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class SocieteDevLogiciel {
 
 	private Developpeur developpeurDebutant;
@@ -28,6 +31,7 @@ public class SocieteDevLogiciel {
 	public void setChefDeveloppeur    (Developpeur chefDeveloppeur    ) { this.chefDeveloppeur     = chefDeveloppeur;     }
 	
 	
+	@PostConstruct
 	public void myPostConstruct() {
 	     System.out.println("---Initialisation SocieteDEvLogiciel ---");
 	     if(chefDeveloppeur != null) {
@@ -35,6 +39,7 @@ public class SocieteDevLogiciel {
 	     }
 	}
 	
+	@PreDestroy
 	public void myPreDestroy() {
 		System.out.println("---Bye Bye SocieteDev ---");
 	}

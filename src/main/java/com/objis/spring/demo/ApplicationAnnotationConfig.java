@@ -3,6 +3,7 @@ package com.objis.spring.demo;
 import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -41,6 +42,11 @@ public class ApplicationAnnotationConfig {
 		LOGGER.info("| devDebutant | " + devDebutant);
 		LOGGER.info("| chefDev     | " + chefDev);
 		LOGGER.info("+-------------+------------------------------+");
+		
+////////////////////////////////////////////////
+//(05.) Libérer Le Contexte
+////////////////////////////////////////////////
+		((AbstractApplicationContext) appContext).registerShutdownHook();
 	}
 
 	

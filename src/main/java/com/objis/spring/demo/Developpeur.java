@@ -1,4 +1,7 @@
 package com.objis.spring.demo;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 
 public class Developpeur {
 
@@ -44,6 +47,7 @@ public class Developpeur {
 			return description;
 		}
 		
+		@PostConstruct
 		public void myPostConstruct() {
 		     System.out.println("---Initialisation  Dev---");
 		     if(nom != null) {
@@ -51,6 +55,7 @@ public class Developpeur {
 		     }
 		}
 		
+		@PreDestroy
 		public void myPreDestroy() {
 			System.out.println("---Bye Bye --- "  + nom);
 		}
